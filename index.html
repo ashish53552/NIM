@@ -26,7 +26,7 @@
     var el=document.querySelector('#image');
     var quality;
     $(document).ready(()=>{
-       var person = prompt("Select image quality according to your internet speemd\n(〃＾▽＾〃) \nEnter:\n1 for OP quality\n2 for low\n3 for high quality\n4 for smol\n5 for thumbnail(try at your own risk)");
+       var person = prompt("Select image quality according to your internet speemd\n(〃＾▽＾〃) \nEnter:\n1 for OP quality\n2 for low\n3 for high quality\n");
          $.ajax({
                 type:"GET",
                 url:"https://api.unsplash.com/photos/random?client_id=GkBp8EU_UH_MOSf3B5t57COY5GJaDL246WLdLNT5LfI&query=nature&count=30&orientation=portrait",
@@ -37,10 +37,6 @@
                             quality=element.urls.raw;
                         }else if(person=='2'){
                             quality=element.urls.regular;
-                        }else if(person=='4'){
-                            quality=element.urls.small;
-                        }else if(person=='5'){
-                            quality=element.urls.thumb;
                         }else{
                             quality=element.urls.full;
                         }
